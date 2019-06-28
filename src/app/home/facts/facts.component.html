@@ -1,0 +1,10 @@
+<button (click)="onGetImage()" [ngClass]="{'clicked-btn': btnClicked}">View NASA Image</button>
+
+<div class="container">
+  <div class="row">
+    <div class="fact-box col">
+      <h2>{{ title }}</h2>
+      <img [src]="this.image" alt="NASA Image">
+    </div>
+  </div>
+</div>

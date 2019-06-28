@@ -1,0 +1,36 @@
+button{
+  z-index: 5;
+  background-color: #000;
+  color: #fff;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px;
+  cursor: pointer;
+  transition: z-index 300s ease-out;
+}
+
+.clicked-btn{
+  z-index: -1000;
+  transition: z-index 300s ease-out;
+}
+
+.fact-box{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 100%;
+
+  h2{
+    color: #fff;
+    text-align: center;
+  }
+
+  img{
+    max-width: 50rem;
+    position: absolute;
+  }
+}
