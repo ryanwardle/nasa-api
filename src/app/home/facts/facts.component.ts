@@ -10,6 +10,9 @@ export class FactsComponent implements OnInit {
   title: string;
   btnClicked = false;
   image: string;
+  altText = ' ';
+  explanation: string;
+  copyright: string;
 
   constructor(private getData: GetDataService) { }
 
@@ -22,6 +25,9 @@ export class FactsComponent implements OnInit {
       this.btnClicked = true;
       this.title = data.title;
       this.image = data.hdurl;
+      this.altText = 'NASA image';
+      this.explanation = data.explanation;
+      this.copyright = `Copyright &copy; ${data.copyright}`;
     });
   }
 

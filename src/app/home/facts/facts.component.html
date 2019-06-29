@@ -4,7 +4,11 @@
   <div class="row">
     <div class="fact-box col">
       <h2>{{ title }}</h2>
-      <img [src]="this.image" alt="NASA Image">
+
+<!-- ALT TEXT DISPLAYED BEFORE IMAGE IS RENDERED -->
+      <img [src]="this.image" [alt]='this.altText'>
+      <p>{{ explanation }}</p>
+      <small [innerHTML]="copyright"></small>
     </div>
   </div>
 </div>
