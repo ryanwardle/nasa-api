@@ -1,4 +1,4 @@
-<button (click)="onGetImage()" [ngClass]="{'clicked-btn': btnClicked}">View NASA Image</button>
+<button id="button-view" (click)="onGetImage()" [ngClass]="{'clicked-btn': btnClicked}">View NASA Image</button>
 
 <div class="container">
   <div class="row">
@@ -7,7 +7,30 @@
 
 <!-- ALT TEXT DISPLAYED BEFORE IMAGE IS RENDERED -->
       <img [src]="this.image" [alt]='this.altText'>
-      <p>{{ explanation }}</p>
+      <!-- <p>{{ explanation }}</p> -->
+
+      <!-- BUILD MODAL TO "LEARN MORE" THAT WILL DISPLAY THE INFO-->
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#info-modal">Learn More</button>
+
+      <div class="modal fade" id="info-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Photo Information</h5>
+            </div>
+            <div class="modal-body">
+              {{explanation}}
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <small [innerHTML]="copyright"></small>
     </div>
   </div>

@@ -28,6 +28,8 @@ export class FactsComponent implements OnInit {
       this.altText = 'NASA image';
       this.explanation = data.explanation;
       this.copyright = `Copyright &copy; ${data.copyright}`;
+
+      // WILL NEED TO DISPLAY BUTTON AS BLOCK ELEMENT
     });
   }
 
