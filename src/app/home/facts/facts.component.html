@@ -7,7 +7,7 @@
 
 <!-- ALT TEXT DISPLAYED BEFORE IMAGE IS RENDERED -->
 
-      <ng-template *ngIf="this.image.length > 0; then image; else video"></ng-template>
+      <!-- <ng-template *ngIf="this.image.length > 0; then image; else video"></ng-template>
 
       <ng-template #image>
           <img [src]="this.image" [alt]='this.altText'>
@@ -15,16 +15,17 @@
 
       <ng-template #video>
           <iframe [src]="this.video" frameborder="0" width="200" height="200"></iframe>
-      </ng-template >
+      </ng-template > -->
 
-      <!-- <div *ngIf="this.image; else video">
+      <div *ngIf="this.image; else video">
         <img [src]="this.image" [alt]='this.altText'>
       </div>
       
 
       <ng-template *ngIf="this.video" #video>
         this is smadglkam;g;kladmfgdklds  og dflgmfl,s;d
-      </ng-template > -->
+      </ng-template >
+
       <!-- <p>{{ explanation }}</p> -->
 
       <!-- BUILD MODAL TO "LEARN MORE" THAT WILL DISPLAY THE INFO-->
@@ -38,7 +39,9 @@
               <h5 class="modal-title">Photo Information</h5>
             </div>
             <div class="modal-body">
-              {{explanation}}
+              <!-- {{explanation}} -->
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quaerat consequuntur enim praesentium 
+              quibusdam numquam earum nam et quis! Animi illum perspiciatis praesentium error, labore sed magnam ipsa tenetur nam? 
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">
