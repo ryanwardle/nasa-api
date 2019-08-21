@@ -10,7 +10,7 @@ export class GetDataService {
 
   constructor(private http: HttpClient) { }
 
-  getImageData(): Observable<any> {
-    return this.http.get(`https://api.nasa.gov/planetary/apod?api_key=${this.key}`);
+getImageData(): Observable<any> {
+  return  this.http.get(`https://api.nasa.gov/planetary/apod?api_key=${this.key}`);
   }
 }

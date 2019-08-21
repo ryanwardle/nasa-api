@@ -10,6 +10,7 @@ export class FactsComponent implements OnInit {
   title: string;
   btnClicked = false;
   image: string;
+  video: string;
   altText = ' ';
   explanation: string;
   copyright: string;
@@ -22,12 +23,13 @@ export class FactsComponent implements OnInit {
   onGetImage() {
     this.getData.getImageData().subscribe(data => {
       console.log(data);
+      data.media_type !== 'video' ? this.image = data.hdurl : this.video = data.url;
       this.btnClicked = true;
       this.title = data.title;
-      this.image = data.hdurl;
       this.altText = 'NASA image';
       this.explanation = data.explanation;
-      this.copyright = `Copyright &copy; ${data.copyright}`;
+
+      data.copyright ? this.copyright = `Copyright &copy; ${data.copyright}` : this.copyright = '';
 
       // WILL NEED TO DISPLAY BUTTON AS BLOCK ELEMENT
     });
