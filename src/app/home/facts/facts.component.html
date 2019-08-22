@@ -3,34 +3,20 @@
 <div class="container">
   <div class="row">
     <div class="fact-box col">
-      <h2>{{ title }}</h2>
+      <h2 id="title">{{ title }}</h2>
 
 <!-- ALT TEXT DISPLAYED BEFORE IMAGE IS RENDERED -->
-
-      <!-- <ng-template *ngIf="this.image.length > 0; then image; else video"></ng-template>
-
-      <ng-template #image>
-          <img [src]="this.image" [alt]='this.altText'>
-      </ng-template>
-
-      <ng-template #video>
-          <iframe [src]="this.video" frameborder="0" width="200" height="200"></iframe>
-      </ng-template > -->
-
-      <div *ngIf="this.image; else video">
-        <img [src]="this.image" [alt]='this.altText'>
+      <img [src]="this.image" [alt]='this.altText'>
+      <div class="gradient-text">
+        <span></span>
+        <p id="explanation">{{ explanation }}</p>
       </div>
-      
 
-      <ng-template *ngIf="this.video" #video>
-        this is smadglkam;g;kladmfgdklds  og dflgmfl,s;d
-      </ng-template >
-
-      <!-- <p>{{ explanation }}</p> -->
+      <!-- MAYBE ABLE TO GET RID OF MODAL IDEA, CAN GET RID OF SCRIPTS AND UNINSTALL PACKAGES, AND USE GSAP INSTEAD -->
 
       <!-- BUILD MODAL TO "LEARN MORE" THAT WILL DISPLAY THE INFO-->
 
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#info-modal">Learn More</button>
+      <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#info-modal">Learn More</button>
 
       <div class="modal" id="info-modal">
         <div class="modal-dialog modal-dialog-scrollable">
@@ -39,9 +25,7 @@
               <h5 class="modal-title">Photo Information</h5>
             </div>
             <div class="modal-body">
-              <!-- {{explanation}} -->
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quaerat consequuntur enim praesentium 
-              quibusdam numquam earum nam et quis! Animi illum perspiciatis praesentium error, labore sed magnam ipsa tenetur nam? 
+              {{explanation}}
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">
@@ -50,7 +34,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <small [innerHTML]="copyright"></small>
     </div>

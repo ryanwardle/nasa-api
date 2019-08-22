@@ -13,8 +13,7 @@
 }
 
 .clicked-btn{
-  z-index: -1000;
-  transition: z-index 300s ease-out;
+  display: none;
 }
 
 .fact-box{

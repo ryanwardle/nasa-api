@@ -23,7 +23,7 @@ export class FactsComponent implements OnInit {
   onGetImage() {
     this.getData.getImageData().subscribe(data => {
       console.log(data);
-      data.media_type !== 'video' ? this.image = data.hdurl : this.video = data.url;
+      this.image = data.hdurl;
       this.btnClicked = true;
       this.title = data.title;
       this.altText = 'NASA image';
