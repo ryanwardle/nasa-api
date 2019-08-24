@@ -1,42 +1,15 @@
-<button id="button-view" (click)="onGetImage()" [ngClass]="{'clicked-btn': btnClicked}">View NASA Image</button>
-
 <div class="container">
   <div class="row">
     <div class="fact-box col">
-      <h2 id="title">{{ title }}</h2>
+      <h2 id="title" #titleEl>{{ title }}</h2>
+      <img [src]="this.image" [alt]='this.altText' #imageEl>
 
-<!-- ALT TEXT DISPLAYED BEFORE IMAGE IS RENDERED -->
-      <img [src]="this.image" [alt]='this.altText'>
-      <div class="gradient-text">
-        <span></span>
-        <p id="explanation">{{ explanation }}</p>
+      <div class="text-box" #textBox>
+          <p id="explanation">{{ explanation }}</p>
+          <small [innerHTML]="copyright"></small>
       </div>
-
-      <!-- MAYBE ABLE TO GET RID OF MODAL IDEA, CAN GET RID OF SCRIPTS AND UNINSTALL PACKAGES, AND USE GSAP INSTEAD -->
-
-      <!-- BUILD MODAL TO "LEARN MORE" THAT WILL DISPLAY THE INFO-->
-
-      <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#info-modal">Learn More</button>
-
-      <div class="modal" id="info-modal">
-        <div class="modal-dialog modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-header d-flex justify-content-center">
-              <h5 class="modal-title">Photo Information</h5>
-            </div>
-            <div class="modal-body">
-              {{explanation}}
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
-      <small [innerHTML]="copyright"></small>
     </div>
+
+    <button id="button-view" (click)="onStartAnimations()" [ngClass]="{'clicked-btn': btnClicked}">View NASA Image</button>
   </div>
 </div>
