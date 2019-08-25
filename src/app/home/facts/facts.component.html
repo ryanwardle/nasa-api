@@ -2,6 +2,13 @@
   <div class="row">
     <div class="fact-box col">
       <h2 id="title" #titleEl>{{ title }}</h2>
+
+      <!-- NEED TO FIGURE OUT VIDEO VS IMAGE -->
+      <!-- <img *ngIf="this.image !== 'undefined'; else video" [src]="this.image" [alt]='this.altText' #imageEl>
+      <ng-template #video>
+        <h1 style="font-size: 40px;">VIDEO</h1>
+      </ng-template> -->
+
       <img [src]="this.image" [alt]='this.altText' #imageEl>
 
       <div class="text-box" #textBox>

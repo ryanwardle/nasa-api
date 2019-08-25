@@ -15,6 +15,7 @@ export class FactsComponent implements OnInit, AfterViewInit {
   altText = ' ';
   explanation: string;
   copyright: string;
+  mediaType: string;
   @ViewChild('textBox') textBox: ElementRef;
   @ViewChild('imageEl') imageEl: ElementRef;
   @ViewChild('titleEl') titleEl: ElementRef;
@@ -28,6 +29,7 @@ export class FactsComponent implements OnInit, AfterViewInit {
       this.title = data.title;
       this.altText = 'NASA image';
       this.explanation = data.explanation;
+      // this.mediaType = data.media_type;
 
       data.copyright ? this.copyright = `Copyright &copy; ${data.copyright}` : this.copyright = '';
     });
@@ -36,13 +38,31 @@ export class FactsComponent implements OnInit, AfterViewInit {
   onStartAnimations() {
     this.btnClicked = true;
     const textBox = this.textBox.nativeElement;
-    const image = this.imageEl.nativeElement;
     const title = this.titleEl.nativeElement;
+    const image = this.imageEl.nativeElement;
     TweenMax.to(textBox, 10, {opacity: 1});
     TweenMax.to(image, 15, {opacity: 1});
     TweenMax.to(title, 10, {opacity: 1});
-
+    
   }
+
+  // onStartAnimations() {
+  //   this.btnClicked = true;
+  //   const textBox = this.textBox.nativeElement;
+  //   const title = this.titleEl.nativeElement;
+  //   if(this.imageEl.nativeElement){
+  //     const image = this.imageEl.nativeElement;
+  //     TweenMax.to(textBox, 10, {opacity: 1});
+  //     TweenMax.to(image, 15, {opacity: 1});
+  //     TweenMax.to(title, 10, {opacity: 1});
+  //   }else{
+  //     const video = this.videoeEl.nativeElement;
+  //     TweenMax.to(textBox, 10, {opacity: 1});
+  //     TweenMax.to(image, 15, {opacity: 1});
+  //     TweenMax.to(title, 10, {opacity: 1});
+  //   }
+    
+  // }
 
   ngAfterViewInit() {
     console.log(this.textBox.nativeElement.innerHTML)
