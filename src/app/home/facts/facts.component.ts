@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { GetDataService } from '../../get-data.service';
-import { TweenMax } from 'gsap';
+import { TweenMax, TimelineMax } from 'gsap';
 
 @Component({
   selector: 'app-facts',
@@ -19,6 +19,7 @@ export class FactsComponent implements OnInit, AfterViewInit {
   @ViewChild('textBox') textBox: ElementRef;
   @ViewChild('imageEl') imageEl: ElementRef;
   @ViewChild('titleEl') titleEl: ElementRef;
+  @ViewChild('hideContent') hideContent: ElementRef;
 
   constructor(private getData: GetDataService) { }
 
@@ -40,29 +41,18 @@ export class FactsComponent implements OnInit, AfterViewInit {
     const textBox = this.textBox.nativeElement;
     const title = this.titleEl.nativeElement;
     const image = this.imageEl.nativeElement;
-    TweenMax.to(textBox, 10, {opacity: 1});
-    TweenMax.to(image, 15, {opacity: 1});
-    TweenMax.to(title, 10, {opacity: 1});
-    
-  }
+    const hideContent = this.hideContent.nativeElement;
 
-  // onStartAnimations() {
-  //   this.btnClicked = true;
-  //   const textBox = this.textBox.nativeElement;
-  //   const title = this.titleEl.nativeElement;
-  //   if(this.imageEl.nativeElement){
-  //     const image = this.imageEl.nativeElement;
-  //     TweenMax.to(textBox, 10, {opacity: 1});
-  //     TweenMax.to(image, 15, {opacity: 1});
-  //     TweenMax.to(title, 10, {opacity: 1});
-  //   }else{
-  //     const video = this.videoeEl.nativeElement;
-  //     TweenMax.to(textBox, 10, {opacity: 1});
-  //     TweenMax.to(image, 15, {opacity: 1});
-  //     TweenMax.to(title, 10, {opacity: 1});
-  //   }
+    const tl = new TimelineMax({paused: true});
+
+    tl
+    .to(title, 1, {opacity: 1})
+    .to(image, 1, {opacity: 1})
+    .to(textBox, .5, {opacity: 1})
+    .from(hideContent, .5, {y: '100%'})
     
-  // }
+    tl.play();
+  }
 
   ngAfterViewInit() {
     console.log(this.textBox.nativeElement.innerHTML)
