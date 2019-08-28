@@ -8,13 +8,11 @@
   transform: translate(-50%, -50%);
   padding: 15px;
   cursor: pointer;
-  transition: z-index 300s ease-out;
   border-radius: 100rem;
 }
 
 .clicked-btn{
-  z-index: -1000;
-  transition: z-index 300s ease-out;
+  display: none;
 }
 
 .fact-box{
@@ -22,7 +20,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;
+  z-index: 5;
   max-width: 100rem;
   margin: 0 auto;
   display: flex;
@@ -32,16 +30,38 @@
   h2{
     color: #fff;
     text-align: center;
+    opacity: 0;
   }
 
   img{
     max-width: 40rem;
     margin-top: 2rem;
+    opacity: 0;
   }
 
-  p,
-  small{
+  .text-box{
+    display: flex;
+    justify-content: center;
+    text-align: center;
     color: #fff;
-    margin-top: 2rem;
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    margin: 0 2rem 0 0;
+    width: 100%;
+    opacity: 0;
+    
+    small{
+      color: #fff;
+      margin-top: 2rem;
+    }
+
+    .hide-content{
+      z-index: 200;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
   }
 }

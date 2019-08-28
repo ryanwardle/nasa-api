@@ -1,58 +1,25 @@
-<button id="button-view" (click)="onGetImage()" [ngClass]="{'clicked-btn': btnClicked}">View NASA Image</button>
-
 <div class="container">
-  <div class="row">
-    <div class="fact-box col">
-      <h2>{{ title }}</h2>
-
-<!-- ALT TEXT DISPLAYED BEFORE IMAGE IS RENDERED -->
-
-      <!-- <ng-template *ngIf="this.image.length > 0; then image; else video"></ng-template>
-
-      <ng-template #image>
-          <img [src]="this.image" [alt]='this.altText'>
-      </ng-template>
-
-      <ng-template #video>
-          <iframe [src]="this.video" frameborder="0" width="200" height="200"></iframe>
-      </ng-template > -->
-
-      <div *ngIf="this.image; else video">
-        <img [src]="this.image" [alt]='this.altText'>
-      </div>
+    <div class="row">
+        <div class="fact-box col">
+            <h2 id="title" #titleEl>{{ title }}</h2>
       
-
-      <ng-template *ngIf="this.video" #video>
-        this is smadglkam;g;kladmfgdklds  og dflgmfl,s;d
-      </ng-template >
-
-      <!-- <p>{{ explanation }}</p> -->
-
-      <!-- BUILD MODAL TO "LEARN MORE" THAT WILL DISPLAY THE INFO-->
-
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#info-modal">Learn More</button>
-
-      <div class="modal" id="info-modal">
-        <div class="modal-dialog modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-header d-flex justify-content-center">
-              <h5 class="modal-title">Photo Information</h5>
-            </div>
-            <div class="modal-body">
-              <!-- {{explanation}} -->
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quaerat consequuntur enim praesentium 
-              quibusdam numquam earum nam et quis! Animi illum perspiciatis praesentium error, labore sed magnam ipsa tenetur nam? 
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">
-                Close
-              </button>
-            </div>
+            <!-- NEED TO FIGURE OUT VIDEO VS IMAGE -->
+            <!-- <img *ngIf="this.image !== 'undefined'; else video" [src]="this.image" [alt]='this.altText' #imageEl>
+            <ng-template #video>
+              <h1 style="font-size: 40px;">VIDEO</h1>
+            </ng-template> -->
+      
+            <img [src]="this.image" [alt]='this.altText' #imageEl>
+            
+            <p id="explanation" class="text-box" #textBox>
+                <span class="hide-content" #hideContent>
+                  {{ explanation }}
+                  <!-- NEED TO WORK ON THIS -->
+                  <!-- <small [innerHTML]="copyright"></small> -->
+                </span>
+            </p>
           </div>
-        </div>
-      </div>
-
-      <small [innerHTML]="copyright"></small>
+  
+      <button id="button-view" (click)="onStartAnimations()" [ngClass]="{'clicked-btn': btnClicked}">View NASA Image</button>
     </div>
   </div>
-</div>
