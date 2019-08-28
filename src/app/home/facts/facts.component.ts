@@ -15,7 +15,7 @@ export class FactsComponent implements OnInit, AfterViewInit {
   altText = ' ';
   explanation: string;
   copyright: string;
-  mediaType: string;
+  mediaType: string = 'image';
   @ViewChild('textBox') textBox: ElementRef;
   @ViewChild('imageEl') imageEl: ElementRef;
   @ViewChild('titleEl') titleEl: ElementRef;
@@ -30,7 +30,7 @@ export class FactsComponent implements OnInit, AfterViewInit {
       this.title = data.title;
       this.altText = 'NASA image';
       this.explanation = data.explanation;
-      // this.mediaType = data.media_type;
+      this.mediaType = data.media_type;
 
       data.copyright ? this.copyright = `Copyright &copy; ${data.copyright}` : this.copyright = '';
     });
